@@ -1,37 +1,42 @@
-import React, { ReactComponent } from 'react'
-import Comment from './Comment';
-import Clock from './Clock';
-import StateUsage from './State';
+import React from 'react'
+import { Switch, Route } from 'react-router-dom';
 
-class App  extends React.Component{
-    constructor(props){
-        super(props);
+/* Components */
+import Comment from './Components/Comment';
+import Clock from './Components/Clock';
+import StateUsage from './Components/State';
+import Counter from './Components/Counter';
+import TodoList from './Components/TodoList';
+import Home from './Components/Home';
 
-        this.state = {
-            comment: {
-                date: new Date(),
-                text: 'I hope you enjoy learning React!',
-                author: {
-                    name: 'Hello Kitty',
-                    avatarUrl: 'https://placekitten.com/g/64/64',
-                }
-            }
-        };
-    }
 
+class App extends React.Component{
     render(){
         return (
-            <div>
-                <Clock />
-                <hr/>
-                <h3>Comment 1</h3>
-                <Comment 
-                    author={this.state.comment.author}
-                    text={this.state.comment.text}
-                    date={this.state.comment.date}
-                />
-                <hr/>
-                <StateUsage name="JOhn"/>
+            <div className='app-main'>
+                <Switch>
+                    <Route path="/home">
+                        <Home/>
+                    </Route>
+                    <Route path="/todolist">
+                        <TodoList/>
+                    </Route>
+                    <Route path="/clock">
+                        <Clock/>
+                    </Route>
+                    <Route path="/comment">
+                        <Comment/>
+                    </Route>
+                    <Route path="/state">
+                        <StateUsage/>
+                    </Route>
+                    <Route path="/counter">
+                        <Counter/>
+                    </Route>
+                    <Route path="/">
+                        <Home/>
+                    </Route>
+                </Switch>
             </div>
         );
     }
