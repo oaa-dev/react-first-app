@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactComponent } from 'react'
 
 const Avatar = (props) => {
     return ( 
@@ -8,6 +8,7 @@ const Avatar = (props) => {
         />
     );
 }
+
 const UserInfo = (props) =>{
     return (
         <div className="UserInfo">
@@ -18,7 +19,7 @@ const UserInfo = (props) =>{
         </div>
     );
 }
-
+    
 const formatDate = (date) =>{
     return date.toLocaleDateString();
 }
@@ -42,16 +43,18 @@ const comment = {
     },
 };
 
-const App = () =>{
-    return (
-        <div>
-            <Comment 
-                author={comment.author}
-                text={comment.text}
-                date={comment.date}
-            />
-        </div>
-    );
+class App  extends React.Component{
+    render(){
+        return (
+            <div>
+                <Comment 
+                    author={comment.author}
+                    text={comment.text}
+                    date={comment.date}
+                />
+            </div>
+        );
+    }
 }
 
 export default App
