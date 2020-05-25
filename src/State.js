@@ -1,4 +1,4 @@
-import React, { ReactComponent, useState } from 'react';
+import React, { ReactComponent } from 'react';
 
 class StateUsage extends React.Component {
     constructor(props){
@@ -10,14 +10,13 @@ class StateUsage extends React.Component {
             sex:'Male',
             isToggleOn:true,
         }
-
-        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount(){
         this.setState((state, props)=>{
             return { name:`${props.name} ${state.name}` };
         });
+
     }
 
     handleClick = () =>{
@@ -32,9 +31,6 @@ class StateUsage extends React.Component {
                 <h3>Name: { this.state.name }</h3>
                 <h3>Age: { this.state.age }</h3>
                 <h3>Sex: { this.state.sex }</h3>
-                <button onClick={this.handleClick}>
-                    { this.state.isToggleOn ?'ON':'OFF'}
-                </button>
             </div>
         );
     }

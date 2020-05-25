@@ -26,11 +26,13 @@ const formatDate = (date) =>{
 
 class Comment extends React.Component {
     render(){
+        const {author, text, date} = this.props;
+
         return (
             <div className="Comment">
-                <UserInfo user = {this.props.author}/>
-                <div className="Comment-text">{this.props.text}</div>
-                <div className="Comment-date">{formatDate(this.props.date)}</div>
+                <UserInfo user = {author}/>
+                <div className="Comment-text">{text}</div>
+                <div className="Comment-date">{formatDate(date)}</div>
             </div>
         );
     }
