@@ -1,4 +1,4 @@
-import React, { ReactComponent, useState } from 'react';
+import React from 'react';
 
 class StateUsage extends React.Component {
     constructor(props){

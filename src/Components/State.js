@@ -1,4 +1,4 @@
-import React, { ReactComponent } from 'react';
+import React from 'react';
 
 class StateUsage extends React.Component {
     constructor(props){
@@ -16,7 +16,6 @@ class StateUsage extends React.Component {
         this.setState((state, props)=>{
             return { name:`${props.name} ${state.name}` };
         });
-
     }
 
     handleClick = () =>{
