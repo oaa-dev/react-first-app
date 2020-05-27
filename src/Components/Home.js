@@ -20,6 +20,9 @@ const Home = () => {
     const handleOnClickCounter = () => {
         history.push('/counter');
     }
+    const handleOnClickHandling = () => {
+        history.push('/handling-event');
+    }
 
     return(
         <div className="home-main">
@@ -29,6 +32,7 @@ const Home = () => {
             <button onClick={handleOnClickComment}>Comment</button><br/>
             <button onClick={handleOnClickState}>State Example</button><br/>
             <button onClick={handleOnClickCounter}>Counter Example</button><br/>
+            <button onClick={handleOnClickHandling}>Handling Events</button><br/>
         </div>
     );
 }

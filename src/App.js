@@ -7,6 +7,7 @@ import Clock from './Components/Clock';
 import StateUsage from './Components/State';
 import Counter from './Components/Counter';
 import TodoList from './Components/TodoList';
+import Handling_Event from './Components/Handling_Event';
 import Home from './Components/Home';
 
 
@@ -32,6 +33,9 @@ class App extends React.Component{
                     </Route>
                     <Route path="/counter">
                         <Counter/>
+                    </Route>
+                    <Route path="/handling-event">
+                        <Handling_Event />
                     </Route>
                     <Route path="/">
                         <Home/>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState } from 'react';
 
 const TodoList = () => {
     console.log("App Rendered");
@@ -52,10 +52,6 @@ const TodoList = () => {
         }
     }
 
-    useEffect(() => {
-        console.log("render by use effect")
-    }, [])
-    
     return(
         <div>
             <h3>Todo List</h3>
